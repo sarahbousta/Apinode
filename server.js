@@ -8,7 +8,7 @@ app.listen(HTTP_PORT, () => {
 });
 
 app.get("/", (req, res, next) => {
-    res.json({"message":"Ok"})
+    res.json({"message":"Hello World"})
 });
 
 // Fallback route
