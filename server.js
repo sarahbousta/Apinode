@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -14,7 +15,7 @@ app.listen(HTTP_PORT, () => {
 });
 
 // Basic route
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
     res.json({ message: 'Hello World' });
 });
 

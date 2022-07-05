@@ -1,12 +1,13 @@
+/* eslint-disable no-console */
 const sqlite3 = require('sqlite3').verbose();
 
 const DBSOURCE = 'db.sqlite';
 
-const db = new sqlite3.Database(DBSOURCE, (err) => {
-    if (err) {
+const db = new sqlite3.Database(DBSOURCE, (errConnect) => {
+    if (errConnect) {
         // Cannot open database
-        console.error(err.message);
-        throw err;
+        console.error(errConnect.message);
+        throw errConnect;
     } else {
         console.log('Connected to the SQLite database.');
         db.run(
@@ -15,8 +16,8 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
                 contents text,
                 done tinyint DEFAULT 0
             )`,
-            (err) => {
-                if (err) {
+            (errQuery) => {
+                if (errQuery) {
                 // Table already created
                 } else {
                 // Table just created, creating some rows

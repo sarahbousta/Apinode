@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable func-names */
 class TodoRepository {
     constructor(database) {
         this.database = database;
@@ -88,6 +90,7 @@ class TodoRepository {
         });
     }
 
+    // eslint-disable-next-line class-methods-use-this
     decorator(todo) {
         return {
             ...todo,
