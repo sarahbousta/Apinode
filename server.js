@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const HTTP_PORT = 3000;
+const HTTP_PORT = 8000;
 const API_KEY = '8f94826adab8ffebbeadb4f9e161b2dc';
 
 const db = new sqlite3.Database('db.sqlite'); 
@@ -31,6 +31,7 @@ const addEtag = (req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // Insérer des données d'exemple au démarrage du serveur
 db.serialize(() => {
