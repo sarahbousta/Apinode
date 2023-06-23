@@ -12,7 +12,7 @@ const db = new sqlite3.Database('db.sqlite');
 // Middleware pour vérifier l'API Key
 const checkApiKey = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
-  if ( apiKey !== API_KEY) {
+  if ( apiKey == API_KEY) {
     res.status(401).json({ error: 'Unauthorized' });
   } else {
     next();
